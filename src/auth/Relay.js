@@ -8,10 +8,11 @@ import axios from 'axios';
 export default function Relay(props) {
 
     const {loading, user} = useAuth0();
+    const {isAuthenticated} = useAuth0();
 
     console.log(window.location.pathname.substr(1));
     let pathname = window.location.pathname.substr(1);
-    if (pathname !== "") {
+    if (pathname !== "" && isAuthenticated) {
         if (!pathname.includes('http') || !pathname.includes('https')) {
             pathname = "https://" + pathname
         }

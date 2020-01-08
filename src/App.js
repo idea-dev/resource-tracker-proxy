@@ -5,7 +5,6 @@ import PrivateRoute from "./auth/PrivateRoute";
 import history from "./utils/history";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-
 function App() {
     const {loading} = useAuth0();
     const {isAuthenticated} = useAuth0();
@@ -23,7 +22,7 @@ function App() {
     return (
         <Router history={history}>
             {!isAuthenticated && (
-                <PrivateRoute component={Relay}/>
+                <PrivateRoute path={window.location.pathname} component={Relay}/>
             )}
             <Route component={Relay} />
         </Router>
