@@ -1,6 +1,6 @@
 import React from "react";
 import {useAuth0} from "./auth/react-auth0-spa";
-import Relay from "./auth/Relay";
+import Relay from "./Relay";
 import PrivateRoute from "./auth/PrivateRoute";
 import history from "./utils/history";
 import {BrowserRouter as Router, Route} from "react-router-dom";
@@ -24,7 +24,7 @@ function App() {
             {!isAuthenticated && (
                 <PrivateRoute path={window.location.pathname} component={Relay}/>
             )}
-            <Route component={Relay} />
+            <Route path={window.location.pathname} component={Relay} />
         </Router>
 
     );
