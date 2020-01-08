@@ -17,7 +17,7 @@ export default function Relay(props) {
         }
         console.log(user.email);
         axios.post(
-            'https://8xw8jht2ga.execute-api.us-east-1.amazonaws.com/default/serverlessRI',
+            'http://8xw8jht2ga.execute-api.us-east-1.amazonaws.com/default/serverlessRI',
             {email: `${user.email}`, resource: `${window.location.pathname.substr(1)}`}
         )
             .then(function (response) {
