@@ -12,7 +12,6 @@ export default function Relay(props) {
 
     const trackableDomains = ['notion'];
 
-    console.log(window.location.pathname.substr(1));
     let pathname = window.location.pathname.substr(1);
     if (pathname !== "" && isAuthenticated) {
         if (!pathname.includes('http') || !pathname.includes('https')) {
@@ -27,7 +26,7 @@ export default function Relay(props) {
         });
 
         if (isTrackable.includes(true)) {
-            console.log(user.email);
+            window.location = pathname;
             axios.post(
                 'https://8xw8jht2ga.execute-api.us-east-1.amazonaws.com/default/serverlessRI',
                 {email: `${user.email}`, resource: `${pathname}`}
@@ -38,6 +37,8 @@ export default function Relay(props) {
                 .catch(function (error) {
                     console.log(error);
                 });
+        } else {
+            console.log("Not a trackable domain");
             window.location = pathname;
         }
     }

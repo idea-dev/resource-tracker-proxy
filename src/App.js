@@ -24,7 +24,7 @@ function App() {
             {!isAuthenticated && (
                 <PrivateRoute path={window.location.pathname} component={Relay}/>
             )}
-            <Route path={window.location.pathname} component={Relay} />
+            <Route component={Relay} />
         </Router>
 
     );
