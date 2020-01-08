@@ -13,11 +13,11 @@ export default function Relay(props) {
     let pathname = window.location.pathname.substr(1);
     if (pathname !== "") {
         if (!pathname.includes('http') || !pathname.includes('https')) {
-            pathname = "http://" + pathname
+            pathname = "https://" + pathname
         }
         console.log(user.email);
         axios.post(
-            'http://8xw8jht2ga.execute-api.us-east-1.amazonaws.com/default/serverlessRI',
+            'https://8xw8jht2ga.execute-api.us-east-1.amazonaws.com/default/serverlessRI',
             {email: `${user.email}`, resource: `${window.location.pathname.substr(1)}`}
         )
             .then(function (response) {
