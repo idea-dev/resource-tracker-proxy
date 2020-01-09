@@ -31,12 +31,6 @@ Used React to utilize the authentication SDK provided by Auth0, used AWS Lambda,
 
 *Resource: {URL of resource redirected to}*
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe1705f6-731d-4a82-a7d2-bdb308ffe295/ex.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe1705f6-731d-4a82-a7d2-bdb308ffe295/ex.png)
-
 ## Privacy / Limitations:
 
 To prevent the abuse of this resource, there are limitations to what websites we track. In the RUT repository, redirects to websites outside of the Notion domain will not be tracked and stored on Dynamo DB. This can be easily changed to allow for additional resource tracking.
-
-## Example Video
-
-[https://s3-us-west-2.amazonaws.com/secure.notion-static.com/912b13f7-b0eb-4559-94c3-7b38acaa1d79/ResourceUtilizationProxy.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/912b13f7-b0eb-4559-94c3-7b38acaa1d79/ResourceUtilizationProxy.mov)
