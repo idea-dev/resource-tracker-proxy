@@ -1,6 +1,8 @@
 import "./style/styles.css"
 import {useAuth0} from "./auth/react-auth0-spa";
 import axios from 'axios';
+import React from "react";
+
 
 /**
  * @return {null}
@@ -11,6 +13,16 @@ export default function Relay(props) {
     const {isAuthenticated} = useAuth0();
 
     const trackableDomains = ['notion'];
+
+    if (loading) {
+        return <div className={'loadingDiv'}>
+            <img alt={'logo'} src={'idea.png'} className="ideaLoading">
+            </img>
+            <p style={{marginTop: '20px'}}>
+                IDEA: Northeastern University's Venture Accelerator
+            </p>
+        </div>;
+    }
 
     let pathname = window.location.pathname.substr(1);
     if (pathname !== "" && isAuthenticated) {

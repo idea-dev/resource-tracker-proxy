@@ -7,7 +7,6 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 
 function App() {
     const {loading} = useAuth0();
-    const {isAuthenticated} = useAuth0();
 
     if (loading) {
         return <div className={'loadingDiv'}>
@@ -21,10 +20,7 @@ function App() {
 
     return (
         <Router history={history}>
-            {!isAuthenticated && (
-                <PrivateRoute path={window.location.pathname} component={Relay}/>
-            )}
-            <Route component={Relay} />
+            <PrivateRoute path={window.location.pathname} component={Relay}/>
         </Router>
 
     );
