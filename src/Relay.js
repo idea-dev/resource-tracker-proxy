@@ -2,6 +2,7 @@ import "./style/styles.css"
 import {useAuth0} from "./auth/react-auth0-spa";
 import axios from 'axios';
 import React from "react";
+import idea_logo from './logo.png'
 
 
 /**
@@ -16,7 +17,7 @@ export default function Relay(props) {
 
     if (loading) {
         return <div className={'loadingDiv'}>
-            <img alt={'logo'} src={'idea.png'} className="ideaLoading">
+            <img alt={'logo'} src={idea_logo} className="ideaLoading">
             </img>
             <p style={{marginTop: '20px'}}>
                 IDEA: Northeastern University's Venture Accelerator
