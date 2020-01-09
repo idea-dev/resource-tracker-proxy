@@ -21,20 +21,6 @@ Despite efforts by the community team to determine how often the resources we pr
 
 Used React to utilize the authentication SDK provided by Auth0, used AWS Lambda, AWS DynamoDB, and AWS API Gateway to allow for application to send https requests to DynamoDB without requiring a backend (serverless app), and I hosted the application on Heroku.
 
-**Github** [https://github.com/idea-dev/ResourceTrackerProxy](https://github.com/idea-dev/ResourceTrackerProxy) {We should pay for a private repo}
-
-**AWS Login** **for AWS Lambda, DynamoDB, API Gateway configuration:**
-
-**Console Login Link:** [https://705691709026.signin.aws.amazon.com/console](https://705691709026.signin.aws.amazon.com/console)
-
-**Username:** idea-user
-
-**Password:** idea2020
-
-**Heroku Deployment:** [https://resource-tracker-proxy.herokuapp.com/](https://resource-tracker-proxy.herokuapp.com/)
-
-**[Auth0](https://auth0.com/) Login for Authentication Configuration:** *Login via ideaneu@gmail.com*
-
 **Dynamo DB Schema:**
 
 *resourceUsage Table*
