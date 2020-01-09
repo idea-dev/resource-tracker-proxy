@@ -1,73 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is it?
 
-## Available Scripts
+The Resource Utilization Tracker (RUT) is a tool used to track the utilization of specific resources that can be found on Notion or elsewhere. Essentially, it allows us to determine who clicks on the various links or resources that we provide to our ventures. 
 
-In the project directory, you can run:
+## Why do we need it?
 
-### `npm start`
+Despite efforts by the community team to determine how often the resources we provide to the ventures our used, we are still in the dark. This is a way to quantify the following:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. How often are certain resources used?
+2. Who utilizes those resources most?
+3. What resources are not valuable?
+4. ...
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How to use:
 
-### `npm test`
+{RUT-url}/{url-to-redirect-to}
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Ready Stage Resources - Test Link](https://resource-tracker-proxy.herokuapp.com/https://www.notion.so/Ready-Stage-8b87b8b8b3b541cda3d4f3cd6a45ce40)
 
-### `npm run build`
+## How It's Built:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Used React to utilize the authentication SDK provided by Auth0, used AWS Lambda, AWS DynamoDB, and AWS API Gateway to allow for application to send https requests to DynamoDB without requiring a backend (serverless app), and I hosted the application on Heroku.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Github** [https://github.com/idea-dev/ResourceTrackerProxy](https://github.com/idea-dev/ResourceTrackerProxy) {We should pay for a private repo}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**AWS Login** **for AWS Lambda, DynamoDB, API Gateway configuration:**
 
-### `npm run eject`
+**Console Login Link:** [https://705691709026.signin.aws.amazon.com/console](https://705691709026.signin.aws.amazon.com/console)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Username:** idea-user
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Password:** idea2020
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Heroku Deployment:** [https://resource-tracker-proxy.herokuapp.com/](https://resource-tracker-proxy.herokuapp.com/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**[Auth0](https://auth0.com/) Login for Authentication Configuration:** *Login via ideaneu@gmail.com*
 
-## Learn More
+**Dynamo DB Schema:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*resourceUsage Table*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*Date: {Date in which it was accessed} (Primary Key)*
 
-### Code Splitting
+*Email: {Email of individual accessing resource}*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+*Resource: {URL of resource redirected to}*
 
-### Analyzing the Bundle Size
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe1705f6-731d-4a82-a7d2-bdb308ffe295/ex.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe1705f6-731d-4a82-a7d2-bdb308ffe295/ex.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Privacy / Limitations:
 
-### Making a Progressive Web App
+To prevent the abuse of this resource, there are limitations to what websites we track. In the RUT repository, redirects to websites outside of the Notion domain will not be tracked and stored on Dynamo DB. This can be easily changed to allow for additional resource tracking.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Example Video
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-## Issues:
-
-WebpackDevServer:
-Fix - https://github.com/facebook/create-react-app/issues/8084
+[https://s3-us-west-2.amazonaws.com/secure.notion-static.com/912b13f7-b0eb-4559-94c3-7b38acaa1d79/ResourceUtilizationProxy.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/912b13f7-b0eb-4559-94c3-7b38acaa1d79/ResourceUtilizationProxy.mov)
