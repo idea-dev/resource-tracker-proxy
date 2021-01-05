@@ -10,7 +10,7 @@
     "@testing-library/react": "^9.3.3",
     "@testing-library/user-event": "^7.1.2",
     "@trendmicro/react-sidenav": "^0.4.5",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "history": "latest",
     "material-ui": "^1.0.0-beta.47",
     "react": "^16.12.0",
